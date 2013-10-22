@@ -3,8 +3,7 @@ deform
 
 Deform Framework
 
-Todo Demo
-
+#### Todo.Types.js
 ```javascript
 var Todo = new Deform.Type({
     meta: {
@@ -17,6 +16,18 @@ var Todo = new Deform.Type({
     }
 })
 ```
+
+
+
+
+#### Todo.Routes.js
+```javascript
+Deform.Router([
+    ['/', "main.tpl"]
+])
+```
+
+#### main.tpl
 
 ```html
 <div deform="@todos.$list()">
