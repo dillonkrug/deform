@@ -79,7 +79,7 @@ PUT  /api/todo/5232959cb4bd071211000002/complete
 }
 ```
 
-POST /api/{ type.meta.plural }
+POST /api/todos
 ```javascript
 // Request:
 {
@@ -118,16 +118,20 @@ POST /api/{ type.meta.plural }
 
 ```
 
-
-
+## Front End
 
 
 #### Todo.Routes.js
 ```javascript
 Deform.Router([
-    ['/', "main.tpl"]
+    {
+        path: '/',
+        view: 'main.tpl'
+    }
 ])
 ```
+With Deform, there are no controllers.
+
 
 #### main.tpl
 
@@ -140,6 +144,27 @@ Deform.Router([
     </div>
     <div class="create-todo" deform="$create()">
         {{ text.$input() }}
+        <button deform="$save()"></button>
     </div>
 </div>
 ```
+
+#### Deform Template Syntax
+
+`@todos` accesses the todo Type.  singular and plural can be used interchangably.
+
+Types have methods like `$list()` and `$id()`
+
+Everything inside an element with a `deform` attribute with be executed in the resulting scope of the deform expression.
+
+`$list()` returns a `Deform.DocumentList` object which has methods like `$items()` and `$page('next')`
+
+if a deform expression returns an array, the contents of the element will be repeated for each item in the array
+
+in this example, `complete` is a `Deform.Boolean` object, and `text` is a `Deform.String`.  All `Deform.<object type>` objects have methods like `$input()` which generate the appropriate input element automatically.
+we could also use the following syntax for greater control:
+
+```html
+<input class="customized-checkbox" type="checkbox" deform="complete">
+```
+
