@@ -98,7 +98,7 @@ POST /api/todos
 // Response:
 {
     success: true,
-    count: 3,
+    total: 3,
     data: [{
         _id: "5232959cb4bd071211000002",
         type: "todo",
