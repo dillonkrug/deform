@@ -1,0 +1,23 @@
+{
+  "name": "deform",
+  "version": "0.0.0",
+  "description": "A modular framework for creating web applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dillonkrug/deform"
+  },
+  "keywords": [
+    "deform",
+    "framework"
+  ],
+  "author": "Dillon Krug",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dillonkrug/deform/issues"
+  },
+  "homepage": "https://github.com/dillonkrug/deform"
+}
